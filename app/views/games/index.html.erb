@@ -1,0 +1,28 @@
+<% unless notice.blank? %>
+  <div class="alert alert-success" role="alert"><%= notice %></div>
+<% end %>
+
+<h1 class="page-header">Historia</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Dia del juego</th>
+      <th>Oponente</th>
+      <th>Score</th>
+      <th>Resultado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @games.each do |game| %>
+      <tr>
+        <td><%= game.date_played %></td>
+        <td><%= opponent(game) %></td>
+        <td><%= score(game) %></td>
+        <td><%= result(game) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
